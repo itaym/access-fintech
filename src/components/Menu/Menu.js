@@ -16,7 +16,7 @@ const Menu = ({ children, className, tabIndex = 0, ...rest }) => {
     }
 
     console.log('----',currentItem)
-    const onMenuClick = useCallback((keyEvent) => {
+    const onMenuClick = useCallback(() => {
         setMenuState(!isMenuOpen)
     }, [isMenuOpen])
 

@@ -38,7 +38,7 @@ function App() {
             <Menu>
                 <MenuItem onClick={onItemClick}>Option 0</MenuItem>
                 <MenuItem onClick={onItemClick}>
-                    <a target="_blank" href="http://youtube.com">Youtube</a>
+                    <a target="_blank" rel="noreferrer" href="http://youtube.com">Youtube</a>
                 </MenuItem>
                 <MenuItem onClick={onItemClick}>
                     <button onClick={onButtonClick}>Click me please</button>

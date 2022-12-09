@@ -20,7 +20,7 @@ const MenuItem = (
     const onMenuItemClick = useCallback((mouseEvent) => {
         onMenuClick()
         onClick(mouseEvent, index)
-    }, [onMenuClick, index])
+    }, [onMenuClick, onClick, index])
 
     const onMenuItemMouseOver = useCallback(() => {
         if (selected) return
