@@ -14,8 +14,7 @@ const Menu = ({ children, className, tabIndex = 0, ...rest }) => {
     const setMenuState = (isOpen) => {
         setIsMenuOpen(isOpen)
     }
-
-    console.log('----',currentItem)
+    
     const onMenuClick = useCallback(() => {
         setMenuState(!isMenuOpen)
     }, [isMenuOpen])
@@ -35,7 +34,7 @@ const Menu = ({ children, className, tabIndex = 0, ...rest }) => {
 
     const onMenuKeyDown = useCallback((keyEvent) => {
         let newIndex = currentItem
-        console.log('onMenuKeyDown', currentItem)
+
         switch (keyEvent.key) {
             case 'Right':
             case 'ArrowRight':
@@ -58,7 +57,6 @@ const Menu = ({ children, className, tabIndex = 0, ...rest }) => {
             default:
                 return
         }
-        console.log(newIndex, currentItem, keyEvent.key,numOfItems)
         setCurrentItem(newIndex)
 
     }, [currentItem, setCurrentItem, numOfItems])

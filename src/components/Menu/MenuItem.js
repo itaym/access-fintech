@@ -45,7 +45,7 @@ const MenuItem = (
         if (selected) {
             liRef.current.focus()
         }
-    })
+    }, [selected])
     return (
         <div tabIndex={tabIndex} style={{display:'block'}}
              {...rest}
