@@ -72,6 +72,9 @@ const Menu = ({ children, className, tabIndex = 0, ...rest }) => {
                 <MoreIcon className={styles.more_icon} />
             </div>
             <Conditional condition={isMenuOpen}>
+                <div
+                    className={ styles.menu_layout}
+                    onClick={onMenuClick}/>
                 <div className={ styles.menu_holder }>
                 {
                     React.Children.map(children, (child, index) => {

@@ -1,8 +1,16 @@
 @import "colors";
 .menu {
   position: relative;
- // display: inline-block;
   width: 48px;
+  z-index: 9998;
+}
+.menu_layout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9997;
 }
 .menu_holder {
   background-color: $black400;
