@@ -1,0 +1,46 @@
+@import "colors";
+.menu {
+  position: relative;
+  width: 48px;
+  z-index: 9998;
+}
+.menu_layout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9997;
+}
+.menu_holder {
+  background-color: $black400;
+  border-radius: 4px;
+  font-size: 28px;
+  left: auto;
+  position: absolute;
+  right: 0;
+  top: 44px;
+  z-index: 9999;
+}
+.more_icon {
+  background-color: $black400;
+  height: 48px;
+  width: 48px;
+}
+.menu_item {
+  padding: 5px 20px;
+  white-space: nowrap;
+  &:focus {
+    outline: none;
+  }
+}
+.is_selected {
+  background-color: $blue100;
+}
+
+body[dir="rtl"] {
+  .menu_holder {
+    left: 0;
+    right: auto;
+  }
+}
