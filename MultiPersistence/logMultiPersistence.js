@@ -3,31 +3,33 @@ import { NUMBERS } from './enums.js'
 
 export default function logMultiPersistence({
     goalNumber,
-    startNumber,
+    currentNo,
 }) {
-    const totalToRun = goalNumber - startNumber
+    const totalToRun = goalNumber - currentNo
 
     return function ({
         currentNumber,
         endTime,
         iterations,
+        iterationsPerLog,
         numberFound,
-        powersCache,
+        startTimeLog,
         startTime,
         steps,
     }) {
-        const numOfMilliseconds = BigInt(endTime - startTime)
-        const timeRemaining = (totalToRun / currentNumber) * numOfMilliseconds - numOfMilliseconds
+        const numOfMilliseconds = endTime - startTime
+        const numOfMillisecondsLog = endTime - startTimeLog
+        //const timeRemaining = (totalToRun / currentNumber) * numOfMilliseconds - numOfMilliseconds
 try {
     console.log('----------------------------------------')
     console.log(`Number found in ${steps} -> ${numberFound.toLocaleString()}`)
     console.log(`Current number length: ${currentNumber.toString().length.toLocaleString()}`)
-    console.log(`Iterations: ${iterations.toLocaleString()}, ${(NUMBERS.hundred * currentNumber / goalNumber).toLocaleString()}%`)
-    console.log(`Iterations/sec: ${(iterations / (numOfMilliseconds / NUMBERS.thousand)).toLocaleString()}`)
-    console.log(`Progress/sec length: ${((currentNumber - startNumber) / (numOfMilliseconds / NUMBERS.thousand)).toString().length.toLocaleString()}`)
-    console.log(`Powers cache size: ${powersCache.size.toLocaleString()}`)
+    console.log(`Iterations: ${iterations.toLocaleString()}`)
+    console.log(`Avg Iterations/sec: ${Math.floor(iterations / (numOfMilliseconds / 1000)).toLocaleString()}`)
+    console.log(`Log Iterations/sec: ${Math.floor(iterationsPerLog / (numOfMillisecondsLog / 1000)).toLocaleString()}`)
+    //console.log(`Progress/sec length: ${((currentNumber - startNumber) / (numOfMilliseconds / 1000)).toString().length.toLocaleString()}`)
     console.log(`Up Time: ${getTimeString(numOfMilliseconds)} (${numOfMilliseconds})`)
-    console.log(`Time to go: ${getTimeString(timeRemaining)}`)
+    //console.log(`Time to go: ${getTimeString(timeRemaining)}`)
 } catch {}
 
 }}
